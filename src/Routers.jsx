@@ -9,6 +9,7 @@ import AddNewBrand from "./Cpmponent/Pages/AddNewBrand/AddNewBrand";
 import ProductsCard from "./Cpmponent/ProductsCard/ProductsCard";
 import Regester from "./Cpmponent/Pages/Regester/Regester";
 import LoginForm from "./Cpmponent/Pages/Login/Login";
+import PrivetRoutes from "./Cpmponent/PrivedRoutes/PrivetRoutes";
 
  export const router = createBrowserRouter([
     {
@@ -23,17 +24,17 @@ import LoginForm from "./Cpmponent/Pages/Login/Login";
         },
         {
             path: "/addProduct",
-            element: <AddProduct></AddProduct>,
+            element: <PrivetRoutes><AddProduct></AddProduct></PrivetRoutes>,
         },
         {
                
             path:"/addNewBrand",
-            element: <AddNewBrand></AddNewBrand>,
+            element: <PrivetRoutes> <AddNewBrand></AddNewBrand></PrivetRoutes>,
                 
         },
         {
             path: "/:id",
-            element: <ProductsCard></ProductsCard>,
+            element: <PrivetRoutes><ProductsCard></ProductsCard></PrivetRoutes>,
             loader: ({params}) => fetch(`http://localhost:5000/${params.id}`)
         },
         {

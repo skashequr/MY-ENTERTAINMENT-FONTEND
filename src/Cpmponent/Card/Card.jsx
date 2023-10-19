@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export const Card = ({brand}) => {
-    console.log(brand);
+    // console.log(brand);
     return (
       <div className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl  lg:px-8">
         <div className="grid gap-8 sm:max-w-sm sm:mx-auto lg:max-w-full ">

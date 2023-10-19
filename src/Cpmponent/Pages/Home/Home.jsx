@@ -2,11 +2,14 @@ import { useLoaderData } from "react-router-dom";
 import { Banner } from "../../Banner/Banner";
 import Banner2 from "../../Banner/Banner2";
 import { Card } from "../../Card/Card";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 export const Home = () => {
   const brands = useLoaderData()
-  
+  const {user} = useContext(AuthContext)
+  console.log(user)
   
     return (
       <div>

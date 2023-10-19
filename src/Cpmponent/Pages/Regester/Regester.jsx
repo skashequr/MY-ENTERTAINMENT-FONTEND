@@ -35,7 +35,7 @@ const Regester = () => {
 
 
 
-    const handleEmailPAsswordLogin = (e)=>{
+    const handleEmailPAsswordRegester = (e)=>{
         e.preventDefault();
         const email = e.target.email.value;  
         const password = e.target.password.value;
@@ -63,7 +63,7 @@ const Regester = () => {
                     <img className="w-auto h-7 sm:h-8" src="https://merakiui.com/images/logo.svg" alt="" />
                 </div>
 
-                <form onSubmit={handleEmailPAsswordLogin} className="mt-6">
+                <form onSubmit={handleEmailPAsswordRegester} className="mt-6">
                     <div>
                         <label htmlFor="email" className="block text-sm text-gray-800 dark:text-gray-200">Email</label>
                         <input
