@@ -7,7 +7,8 @@ import { Home } from "./Cpmponent/Pages/Home/Home";
 import AddProduct from "./Cpmponent/Pages/AddProduct/AddProduct";
 import AddNewBrand from "./Cpmponent/Pages/AddNewBrand/AddNewBrand";
 import ProductsCard from "./Cpmponent/ProductsCard/ProductsCard";
-import Login from "./Cpmponent/Pages/Login/Login";
+import Regester from "./Cpmponent/Pages/Regester/Regester";
+import LoginForm from "./Cpmponent/Pages/Login/Login";
 
  export const router = createBrowserRouter([
     {
@@ -37,7 +38,11 @@ import Login from "./Cpmponent/Pages/Login/Login";
         },
         {
             path: "/login",
-            element: <Login></Login>
+            element: <LoginForm></LoginForm>
+        },
+        {
+            path: "/regester",
+            element: <Regester></Regester>
         }
     ]
     },
