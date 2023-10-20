@@ -56,8 +56,8 @@ import Update from "./Cpmponent/Pages/UpdateProduct/Update";
         },
         {
             path: "/myCart/:email",
-            element: <AddCard></AddCard>,
-            loader: ({ params }) => fetch('http://localhost:5000/myCard/learningwithextracare@gmail.com')
+            element: <PrivetRoutes><AddCard></AddCard></PrivetRoutes>,
+            loader: ({ params }) => fetch(`http://localhost:5000/myCard/${params.email}`) //learningwithextracare@gmail.com
         },
         {
           path: "/:id/:iddetails/:update",

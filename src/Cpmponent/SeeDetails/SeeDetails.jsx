@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function SeeDetails() {
   const {user} = useContext(AuthContext)
   const detailsData = useLoaderData();
@@ -14,21 +15,22 @@ function SeeDetails() {
     const email = user?.email;
     const cardData = { data, email };
     fetch(`http://localhost:5000/myproducts?email=${email}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(cardData)
-    })
-    
-      .then(res => {
-        console.log(res); // Log the entire response
-        return res.json(); // Attempt to parse the response as JSON
-      })
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.error("An error occurred:", error);
-      });
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(cardData)
+})
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+     toast("Add Sucessfully!");
+
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+
     
     
   }
