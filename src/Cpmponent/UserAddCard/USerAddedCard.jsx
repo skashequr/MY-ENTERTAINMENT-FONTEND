@@ -1,7 +1,27 @@
 
-function UserAddCard({singleaddData}) {
+function UserAddCard({singleaddData , delite}) {
    const  { name,brandName,price,shortDescription,image,rating } = singleaddData.data
-   console.log(singleaddData.data);
+   console.log(delite);
+const email = singleaddData.email
+// const handleDelite = (id, email) => {
+//     fetch(`http://localhost:5000/myCard/${email}/${id}`, {
+//   method: "DELETE"
+// })
+//   .then((res) => {
+//     if (!res.ok) {
+//       throw new Error("Network response was not ok");
+//     }
+//     return res.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.error("Error deleting:", error);
+//   });
+
+//   };
+  
   return (
     <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
       <div className="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
@@ -84,13 +104,15 @@ function UserAddCard({singleaddData}) {
         </div>
       </div>
       <div className="p-6 pt-3">
-        <button
-          className="block w-full select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-          type="button"
-          data-ripple-light="true"
-        >
-          Delite
-        </button>
+      <button
+      onClick={delite}
+  className="block w-full select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+  type="button"
+ 
+>
+  Delete
+</button>
+            
       </div>
     </div>
   );

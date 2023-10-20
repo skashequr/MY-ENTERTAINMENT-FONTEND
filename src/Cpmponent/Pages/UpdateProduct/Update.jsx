@@ -1,19 +1,75 @@
-import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import React from 'react';
+import { useLoaderData, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Update = () => {
-    
-    const { id,iddetails,update } = useParams ()
-    const [data] = useLoaderData()
-    console.log(data);
-    const { name,brandName,image,price,rating,shortDescription } = data
-    const handleUpdate = () => {
+    const { id, iddetails, update } = useParams();
+    const [data] = useLoaderData();
+
+    const { name, brandName, image, price, rating, shortDescription } = data;
+
+    const handleUpdate = (e) => {
+        e.preventDefault();
+
+        const id = update;
+        const name = e.target.name.value;
+        const brandName = e.target.brandName.value;
+        const price = e.target.price.value;
+        const shortDescription = e.target.shortDescription.value;
+        const image = e.target.image.value;
+        const rating = e.target.rating.value;
+
+        const updateProduct = {
+            name,
+            brandName,
+            price,
+            shortDescription,
+            image,
+            rating,
+        };
+
+        fetch(`http://localhost:5000/id/${iddetails}/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updateProduct)
+        })
+        .then((res) => {
+            console.log('Response status:', res.status);
+            if (res.ok) {
+                e.target.reset();
+                return res.json();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .then((data) => {
+            // Handle the response data or show a success message
+            Swal.fire({
+                title: 'Success!',
+                text: 'Your product has been updated successfully',
+                icon: 'success',
+                confirmButtonText: 'OK',
+            });
+            console.log('Response data:', data);
+        })
+        .catch((error) => {
+            // Handle errors and show an error message
+            Swal.fire({
+                title: 'Error!',
+                text: 'There was an error updating the product',
+                icon: 'error',
+                confirmButtonText: 'OK',
+            });
+            console.error(error);
+        });
         
-    }
+    };
+    
+      
     return (
         <div>
             <div className="mt-10">
-            <h1 className="text-4xl text-center text-b">Add New Product</h1>
+            <h1 className="text-4xl text-center text-b mb-16">Update  Product</h1>
             <form onSubmit={handleUpdate}>
   <div className="relative z-0 w-full mb-6 group">
       <input defaultValue={name} type="text" name="name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
