@@ -35,7 +35,7 @@ export const Card = ({brand}) => {
                 {brand?.dis}
               </p>
               <Link to={brand?.brand}>
-                <button className="btn btn-primary">Primary</button>
+                <button className="btn btn-primary">Click Here</button>
                 </Link>
             </div>
           </div>

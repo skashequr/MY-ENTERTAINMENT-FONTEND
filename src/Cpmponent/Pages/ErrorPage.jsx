@@ -3,7 +3,7 @@
 const ErrorPage = () => {
     return (
         <div>
-            Error
+            <img src="https://i.ibb.co/DfhTxMs/1581099611064.jpg" alt="" />
         </div>
     );
 };

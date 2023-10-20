@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/firebase.config";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 
 
 export const AuthContext = createContext(null);
@@ -40,7 +40,11 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-        
+  const logOut = () => {
+    setLodder(true)
+    return signOut(auth)
+      
+  };  
 
     const authData = {
         googleLogin,
@@ -48,6 +52,7 @@ const AuthProvider = ({ children }) => {
         loginWithEmailPass,
         user,
         lodder,
+        logOut,
     };
 
     return (
