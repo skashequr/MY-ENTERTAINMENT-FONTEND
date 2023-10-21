@@ -13,7 +13,7 @@ const AddNewBrand = () => {
 
     console.log(categorie);
 
-    fetch("http://localhost:5000/categorie", {
+    fetch("https://back-end-nine-lake.vercel.app/categorie", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(categorie)

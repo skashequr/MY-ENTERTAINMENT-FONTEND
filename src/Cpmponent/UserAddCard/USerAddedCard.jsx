@@ -4,7 +4,7 @@ function UserAddCard({singleaddData , delite}) {
    console.log(delite);
 const email = singleaddData.email
 // const handleDelite = (id, email) => {
-//     fetch(`http://localhost:5000/myCard/${email}/${id}`, {
+//     fetch(`https://back-end-nine-lake.vercel.app/myCard/${email}/${id}`, {
 //   method: "DELETE"
 // })
 //   .then((res) => {

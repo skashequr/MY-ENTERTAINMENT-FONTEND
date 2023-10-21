@@ -23,7 +23,7 @@ import Update from "./Cpmponent/Pages/UpdateProduct/Update";
         {
             path: "/",
             element: <Home></Home>,
-            loader: ()=> fetch("http://localhost:5000/categorie")
+            loader: ()=> fetch("https://back-end-nine-lake.vercel.app/categorie")
         },
         {
             path: "/addProduct",
@@ -38,13 +38,13 @@ import Update from "./Cpmponent/Pages/UpdateProduct/Update";
         {
             path: "/:id",
             element: <ProductsCard></ProductsCard>,
-            loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
+            loader: ({ params }) => fetch(`https://back-end-nine-lake.vercel.app/${params.id}`),
            
           },
           {
             path: "/:id/:iddetails",
             element:<PrivetRoutes> <SeeDetails></SeeDetails></PrivetRoutes>,
-            loader: ({ params }) => fetch(`http://localhost:5000/${params.id}/${params.iddetails}`)
+            loader: ({ params }) => fetch(`https://back-end-nine-lake.vercel.app/${params.id}/${params.iddetails}`)
           },
         {
             path: "/login",
@@ -57,12 +57,12 @@ import Update from "./Cpmponent/Pages/UpdateProduct/Update";
         {
             path: "/myCart/:email",
             element: <PrivetRoutes><AddCard></AddCard></PrivetRoutes>,
-            loader: ({ params }) => fetch(`http://localhost:5000/myCard/${params.email}`) //learningwithextracare@gmail.com
+            loader: ({ params }) => fetch(`https://back-end-nine-lake.vercel.app/myCard/${params.email}`) //learningwithextracare@gmail.com
         },
         {
           path: "/:id/:iddetails/:update",
           element: <Update></Update>,
-          loader: ({ params }) => fetch(`http://localhost:5000/${params.id}/${params.iddetails}/${params.update}`)
+          loader: ({ params }) => fetch(`https://back-end-nine-lake.vercel.app/${params.id}/${params.iddetails}/${params.update}`)
         }
         
       ]        

@@ -64,8 +64,8 @@ const Regester = () => {
       <div className="w-full max-w-sm p-6 m-auto mx-auto mt-10 bg-white rounded-lg shadow-md dark:bg-gray-800">
         <div className="flex justify-center mx-auto">
           <img
-            className="w-auto h-10 w-10 sm:h-8"
-            src="../../../../public/logo.svg"
+            className="w-auto h-10 sm:h-10"
+            src="../../../../public/"
             alt=""
           />
         </div>

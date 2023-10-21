@@ -28,7 +28,7 @@ const Update = () => {
             rating,
         };
 
-        fetch(`http://localhost:5000/id/${iddetails}/${id}`, {
+        fetch(`https://back-end-nine-lake.vercel.app/id/${iddetails}/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updateProduct)

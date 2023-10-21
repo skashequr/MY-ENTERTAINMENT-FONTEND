@@ -17,7 +17,7 @@ const AddProduct = () => {
             name, brandName, price, shortDescription, image, rating
         };
     
-        fetch("http://localhost:5000/product", {
+        fetch("https://back-end-nine-lake.vercel.app/product", {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newProduct)

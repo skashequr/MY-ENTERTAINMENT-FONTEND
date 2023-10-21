@@ -14,7 +14,7 @@ function SeeDetails() {
   const handleAddCard = (data)=> {
     const email = user?.email;
     const cardData = { data, email };
-    fetch(`http://localhost:5000/myproducts?email=${email}`, {
+    fetch(`https://back-end-nine-lake.vercel.app/myproducts?email=${email}`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json"

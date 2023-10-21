@@ -7,7 +7,7 @@ export const AuthContext = createContext(null);
 const GoogleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
     
-    // http://localhost:5000/product
+    // https://back-end-nine-lake.vercel.app/product
     const [lodder , setLodder] = useState(true);
     const [user , setUser] = useState(null);
 

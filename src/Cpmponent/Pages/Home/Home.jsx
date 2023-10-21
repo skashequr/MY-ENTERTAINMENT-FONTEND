@@ -11,7 +11,7 @@ import { Footer } from "../../Footer/Footer";
 export const Home = () => {
   const brands = useLoaderData()
   const {user} = useContext(AuthContext)
-  // console.log(user)
+  console.log(brands)
   
     return (
       <div>
