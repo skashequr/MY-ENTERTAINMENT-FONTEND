@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { Navigate, useLoaderData, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Update = () => {
@@ -51,6 +51,7 @@ const Update = () => {
                 confirmButtonText: 'OK',
             });
             console.log('Response data:', data);
+            <Navigate to={"/"} replace={true}></Navigate>
         })
         .catch((error) => {
             // Handle errors and show an error message

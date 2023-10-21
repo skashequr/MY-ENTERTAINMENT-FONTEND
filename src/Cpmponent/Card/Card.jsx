@@ -13,15 +13,8 @@ export const Card = ({brand}) => {
             />
             <div className="p-5 border border-t-0">
               <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
-                <a
-                  href="/"
-                  className="transition-colors duration-200 text-blue-gray-900 hover:text-deep-purple-accent-700"
-                  aria-label="Category"
-                  title="traveling"
-                >
-                  traveling
-                </a>
-                <span className="text-gray-600">— 28 Dec 2020</span>
+                
+                
               </p>
               <a
                 href="/"
@@ -32,7 +25,7 @@ export const Card = ({brand}) => {
                {brand?.brand}
               </a>
               <p className="mb-2 text-gray-700">
-                {brand?.dis}
+                {brand?.dis.slice(0,200)}.....
               </p>
               <Link to={brand?.brand}>
                 <button className="btn btn-primary">Click Here</button>
