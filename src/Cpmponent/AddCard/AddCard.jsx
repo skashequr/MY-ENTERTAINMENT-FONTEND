@@ -9,8 +9,24 @@ const AddCard = () => {
   
   const delite = (id) => {
     console.log(`Deleting item with id ${id}`);
-
+  
     setData((prevData) => prevData.filter((item) => item._id !== id));
+    
+    fetch(`https://back-l4jh4jlgw-sheikh-ashequr-rahmans-projects.vercel.app/myCard/${email}/${id}`, {
+      method: "DELETE"
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error deleting:", error);
+      });
   };
 
   const [data, setData] = useState(addCardData);

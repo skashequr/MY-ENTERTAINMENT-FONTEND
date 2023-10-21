@@ -31,7 +31,7 @@ export const Nav = () => {
           title="Company"
           className="inline-flex items-center"
         >
-          <img src="../../../public/logo.svg" className="h-14 w-14" alt="" />
+          <img src="./../../../public/logo.svg" className="h-14 w-14" alt="" />
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
             My Entertainment
           </span>
